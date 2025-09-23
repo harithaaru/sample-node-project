@@ -15,7 +15,7 @@ stages:
     - task: JFrogNpm@1
       inputs:
         command: 'install'
-        artifactoryConnection: 'harithaa-artifactory-hts2'
+        artifactoryConnection: 'harithaa-artifactory-v2-hts2'
         sourceRepo: 'harithaa-npm'
         collectBuildInfo: true
         threads: '1'

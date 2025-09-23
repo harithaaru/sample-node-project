@@ -27,16 +27,6 @@ stages:
         buildName: '$(Build.DefinitionName)'
         buildNumber: '$(Build.BuildNumber)'
 
-    - task: JFrogNpm@1
-      inputs:
-        command: 'pack and publish'
-        artifactoryConnection: 'harithaa-artifactory-v2-hts2'
-        targetRepo: 'harithaa-npm-local'
-        workingFolder: '/home/vsts/work/1/s'
-        collectBuildInfo: true
-        buildName: '$(Build.DefinitionName)'
-        buildNumber: '$(Build.BuildNumber)'
-
     - task: JFrogPublishBuildInfo@1
       inputs:
         artifactoryConnection: 'harithaa-artifactory-v2-hts2'
@@ -49,3 +39,13 @@ stages:
         buildNumber: '$(Build.BuildNumber)'
         allowFailBuild: true
         vuln: true
+
+    - task: JFrogNpm@1
+      inputs:
+        command: 'pack and publish'
+        artifactoryConnection: 'harithaa-artifactory-v2-hts2'
+        targetRepo: 'harithaa-npm-local'
+        workingFolder: '/home/vsts/work/1/s'
+        collectBuildInfo: true
+        buildName: '$(Build.DefinitionName)'
+        buildNumber: '$(Build.BuildNumber)'

@@ -16,7 +16,7 @@ stages:
       inputs:
         command: 'install'
         artifactoryConnection: 'harithaa-artifactory-hts2'
-        sourceRepo: 'harithaa-npm-local'
+        sourceRepo: 'harithaa-npm'
         collectBuildInfo: true
         threads: '1'
         buildName: '$(Build.DefinitionName)'

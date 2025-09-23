@@ -42,3 +42,10 @@ stages:
         artifactoryConnection: 'harithaa-artifactory-v2-hts2'
         buildName: '$(Build.DefinitionName)'
         buildNumber: '$(Build.BuildNumber)'
+    - task: JFrogBuildScan@1
+      inputs:
+        xrayConnection: 'harithaa-xray'
+        buildName: '$(Build.DefinitionName)'
+        buildNumber: '$(Build.BuildNumber)'
+        allowFailBuild: true
+        vuln: true

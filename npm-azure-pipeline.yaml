@@ -1,0 +1,23 @@
+trigger:
+  branches:
+    include:
+    - main
+variables:
+- name: JFROG_CLI_LOG_LEVEL
+  value: 'DEBUG'
+stages:
+- stage: __default
+  jobs:
+  - job: Job
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: JFrogNpm@1
+      inputs:
+        command: 'install'
+        artifactoryConnection: 'harithaa-artifactory-hts2'
+        sourceRepo: 'harithaa-npm-local'
+        collectBuildInfo: true
+        threads: '1'
+        buildName: '$(Build.DefinitionName)'
+        buildNumber: '$(Build.BuildNumber)'

@@ -21,3 +21,18 @@ stages:
         threads: '1'
         buildName: '$(Build.DefinitionName)'
         buildNumber: '$(Build.BuildNumber)'
+    - task: JFrogNpm@1
+      inputs:
+        command: 'pack and publish'
+        artifactoryConnection: 'harithaa-artifactory-v2-hts2'
+        targetRepo: 'harithaa-npm-local'
+        workingFolder: 'npm3/'
+        collectBuildInfo: true
+        buildName: '$(Build.DefinitionName)'
+        buildNumber: '$(Build.BuildNumber)'
+    - task: JFrogPublishBuildInfo@1
+      inputs:
+        artifactoryConnection: 'harithaa-artifactory-v2-hts2'
+        buildName: '$(Build.DefinitionName)'
+        buildNumber: '$(Build.BuildNumber)'
+    

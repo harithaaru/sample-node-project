@@ -32,7 +32,7 @@ stages:
         command: 'pack and publish'
         artifactoryConnection: 'harithaa-artifactory-v2-hts2'
         targetRepo: 'harithaa-npm-local'
-        workingFolder: 'package.json'
+        workingFolder: '/home/vsts/work/1/s'
         collectBuildInfo: true
         buildName: '$(Build.DefinitionName)'
         buildNumber: '$(Build.BuildNumber)'
